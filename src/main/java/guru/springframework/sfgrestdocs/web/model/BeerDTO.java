@@ -1,14 +1,14 @@
 package guru.springframework.sfgrestdocs.web.model;
 
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Null;
-import jakarta.validation.constraints.Positive;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Null;
+import jakarta.validation.constraints.Positive;
 import java.math.BigDecimal;
 import java.time.OffsetDateTime;
 import java.util.UUID;
@@ -28,7 +28,7 @@ public class BeerDTO {
     private OffsetDateTime lastModifiedDate;
     @NotBlank
     private String beerName;
-    @NotBlank
+    @NotNull
     private BeerStyleEnum beerStyle;
     @Positive
     @NotNull

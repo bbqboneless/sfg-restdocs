@@ -10,19 +10,15 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.UUID;
-
+@RestController
 @RequiredArgsConstructor
 @RequestMapping("/api/v1/beer")
-@RestController
 public class BeerController {
-
     private final BeerMapper beerMapper;
     private final BeerRepository beerRepository;
 
     @GetMapping("/{beerId}")
     public ResponseEntity<BeerDTO> getBeerById(@PathVariable("beerId") UUID beerId){
-
-
         return new ResponseEntity<>(beerMapper.BeerToBeerDTO(beerRepository.findById(beerId).get()), HttpStatus.OK);
     }
 
